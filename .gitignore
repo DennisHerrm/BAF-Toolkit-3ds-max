@@ -1,0 +1,23 @@
+# Build trees from BAUE_ALLE.bat
+build_*/
+build/
+*_configure.log
+*_build.log
+
+# Compiled plugins and tools - shipped as release assets, not in git
+output/
+package/BafToolkit/Contents/
+
+# Release artifacts from ERSTELLE_RELEASE.bat
+dist/
+
+# Python
+__pycache__/
+*.pyc
+
+# Editors / OS
+.vs/
+.vscode/
+*.user
+Thumbs.db
+Desktop.ini

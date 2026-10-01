@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationPackage
+    SchemaVersion="1.0"
+    AutodeskProduct="3ds Max"
+    ProductType="Application"
+    Name="BafToolkit"
+    Description="BAF Toolkit - Star Wars Episode I: The Phantom Menace"
+    AppVersion="1.8.3"
+    FriendlyVersion="1.8.3"
+    Author="DH"
+    UpgradeCode="{8D40B7E5-1C96-4A73-B208-E5364F91D7A2}"
+    ProductCode="{C4B0E7A2-1D68-4935-B0FC-27E5194A83DB}">
+
+    <!-- Alles hier gegen die "Autodesk Application Plug-in Package Format
+         Specification" fuer 3ds Max geprueft, nicht aus einem anderen
+         Projekt uebernommen. tools\PRUEFE_PAKET.py prueft es nach.
+
+         Pflicht bei 3ds Max: AutodeskProduct, ProductType, AppVersion
+         (Form MMM.mmm.bbb) und UpgradeCode.
+
+         ProductCode ist bei 3ds Max ANDERS als bei AutoCAD nur optional -
+         die Doku sagt das ausdruecklich. Gebraucht wird er erst beim
+         Hochladen in den Autodesk App Store; dann bei jeder Aenderung von
+         AppVersion neu vergeben. UpgradeCode dagegen ist die dauerhafte
+         Kennung und darf sich NIE aendern: Max laedt je UpgradeCode nur ein
+         Paket, und zwar das mit der hoeheren AppVersion.
+
+         FriendlyVersion steht nicht in der Max-Spezifikation, sondern kommt
+         aus der AutoCAD-/App-Store-Welt. Schadet nicht und wird beim
+         Hochladen gebraucht, deshalb bleibt es stehen.
+
+         Beim naechsten Versionssprung: AppVersion, FriendlyVersion, alle
+         Version="1.8.3", ProductCode, BAFIMPORT_VERSION_STR in
+         baftoolkit.h und sExpectedVersion in BafImport.mcr. PRUEFE_PAKET.py
+         vergleicht die drei letzten miteinander. -->
+
+    <!-- <CompanyDetails> ist PFLICHT. Fehlt der Knoten, laedt das Plugin
+         nicht - auch wenn sonst alles stimmt und ohne verwertbare Meldung.
+         Der Inhalt ist dagegen egal. -->
+    <CompanyDetails Name="DH" />
+
+    <RuntimeRequirements OS="Win64" Platform="3ds Max" SeriesMin="2016" SeriesMax="2027" />
+
+    <!-- ========================================================
+         1. Das Plugin selbst.
+
+         Pro Max-Version ein eigener Block mit SeriesMin = SeriesMax.
+         Die Doku ist dazu deutlich: "3ds Max does not test for binary
+         compatibility." Ein Block mit SeriesMin="2016" SeriesMax="2027"
+         wuerde also EINE DLU in alle zwoelf Jahrgaenge laden - und eine
+         gegen das 2016er SDK gebaute DLU in 2027 endet im Absturz, nicht
+         in einer Meldung.
+
+         Umgekehrt gilt dasselbe: ein zu enger Bereich laedt gar nicht.
+         Steht dort 2015 und laeuft 2016, wird das Plugin uebersprungen,
+         obwohl es binaerkompatibel waere.
+
+         Skripte sind davon nicht betroffen - die teilen sich einen Block
+         ueber den ganzen Bereich (siehe unten).
+
+         Nicht installierte SDKs fehlen im output-Ordner; INSTALLIERE.bat
+         ueberspringt sie dann, und der Block hier laeuft ins Leere. Das
+         ist unschaedlich: Max meldet eine fehlende Datei im max.log.
+         ======================================================== -->
+
+    <Components Description="plugins parts">
+        <RuntimeRequirements OS="Win64" Platform="3ds Max" SeriesMin="2016" SeriesMax="2016" />
+        <ComponentEntry AppName="BafToolkit" Version="1.8.3"
+                        ModuleName="./Contents/2016/BafToolkit.dlu"
+                        AppDescription="BAF Toolkit (Phantom Menace)" />
+    </Components>
+
+    <Components Description="plugins parts">
+        <RuntimeRequirements OS="Win64" Platform="3ds Max" SeriesMin="2017" SeriesMax="2017" />
+        <ComponentEntry AppName="BafToolkit" Version="1.8.3"
+                        ModuleName="./Contents/2017/BafToolkit.dlu"
+                        AppDescription="BAF Toolkit (Phantom Menace)" />
+    </Components>
+
+    <Components Description="plugins parts">
+        <RuntimeRequirements OS="Win64" Platform="3ds Max" SeriesMin="2018" SeriesMax="2018" />
+        <ComponentEntry AppName="BafToolkit" Version="1.8.3"
+                        ModuleName="./Contents/2018/BafToolkit.dlu"
+                        AppDescription="BAF Toolkit (Phantom Menace)" />
+    </Components>
+
+    <Components Description="plugins parts">
+        <RuntimeRequirements OS="Win64" Platform="3ds Max" SeriesMin="2019" SeriesMax="2019" />
+        <ComponentEntry AppName="BafToolkit" Version="1.8.3"
+                        ModuleName="./Contents/2019/BafToolkit.dlu"
+                        AppDescription="BAF Toolkit (Phantom Menace)" />
+    </Components>
+
+    <Components Description="plugins parts">
+        <RuntimeRequirements OS="Win64" Platform="3ds Max" SeriesMin="2020" SeriesMax="2020" />
+        <ComponentEntry AppName="BafToolkit" Version="1.8.3"
+                        ModuleName="./Contents/2020/BafToolkit.dlu"
+                        AppDescription="BAF Toolkit (Phantom Menace)" />
+    </Components>
+
+    <Components Description="plugins parts">
+        <RuntimeRequirements OS="Win64" Platform="3ds Max" SeriesMin="2021" SeriesMax="2021" />
+        <ComponentEntry AppName="BafToolkit" Version="1.8.3"
+                        ModuleName="./Contents/2021/BafToolkit.dlu"
+                        AppDescription="BAF Toolkit (Phantom Menace)" />
+    </Components>
+
+    <Components Description="plugins parts">
+        <RuntimeRequirements OS="Win64" Platform="3ds Max" SeriesMin="2022" SeriesMax="2022" />
+        <ComponentEntry AppName="BafToolkit" Version="1.8.3"
+                        ModuleName="./Contents/2022/BafToolkit.dlu"
+                        AppDescription="BAF Toolkit (Phantom Menace)" />
+    </Components>
+
+    <Components Description="plugins parts">
+        <RuntimeRequirements OS="Win64" Platform="3ds Max" SeriesMin="2023" SeriesMax="2023" />
+        <ComponentEntry AppName="BafToolkit" Version="1.8.3"
+                        ModuleName="./Contents/2023/BafToolkit.dlu"
+                        AppDescription="BAF Toolkit (Phantom Menace)" />
+    </Components>
+
+    <Components Description="plugins parts">
+        <RuntimeRequirements OS="Win64" Platform="3ds Max" SeriesMin="2024" SeriesMax="2024" />
+        <ComponentEntry AppName="BafToolkit" Version="1.8.3"
+                        ModuleName="./Contents/2024/BafToolkit.dlu"
+                        AppDescription="BAF Toolkit (Phantom Menace)" />
+    </Components>
+
+    <Components Description="plugins parts">
+        <RuntimeRequirements OS="Win64" Platform="3ds Max" SeriesMin="2025" SeriesMax="2025" />
+        <ComponentEntry AppName="BafToolkit" Version="1.8.3"
+                        ModuleName="./Contents/2025/BafToolkit.dlu"
+                        AppDescription="BAF Toolkit (Phantom Menace)" />
+    </Components>
+
+    <Components Description="plugins parts">
+        <RuntimeRequirements OS="Win64" Platform="3ds Max" SeriesMin="2026" SeriesMax="2026" />
+        <ComponentEntry AppName="BafToolkit" Version="1.8.3"
+                        ModuleName="./Contents/2026/BafToolkit.dlu"
+                        AppDescription="BAF Toolkit (Phantom Menace)" />
+    </Components>
+
+    <Components Description="plugins parts">
+        <RuntimeRequirements OS="Win64" Platform="3ds Max" SeriesMin="2027" SeriesMax="2027" />
+        <ComponentEntry AppName="BafToolkit" Version="1.8.3"
+                        ModuleName="./Contents/2027/BafToolkit.dlu"
+                        AppDescription="BAF Toolkit (Phantom Menace)" />
+    </Components>
+
+    <!-- ========================================================
+         2. MacroScript - die Oberflaeche.
+         Landet unter Customize -> Customize User Interface ->
+         Category "DH Tools" und laesst sich von dort auch auf
+         eine Toolbar oder einen Shortcut legen.
+         ======================================================== -->
+
+    <Components Description="macroscripts parts">
+        <RuntimeRequirements OS="Win64" Platform="3ds Max" SeriesMin="2016" SeriesMax="2027" />
+        <ComponentEntry AppName="BafImportUI" Version="1.8.3"
+                        ModuleName="./Contents/MacroScripts/BafImport.mcr"
+                        AppDescription="Oberflaeche zum Importieren" />
+        <ComponentEntry AppName="BafExportUI" Version="1.8.3"
+                        ModuleName="./Contents/MacroScripts/BafExport.mcr"
+                        AppDescription="Oberflaeche zum Exportieren" />
+    </Components>
+
+    <!-- ========================================================
+         3. Kein Menue mehr.
+
+         Bis 1.0.1 lag hier ein Post-Start-Up-Skript, das ein
+         eigenes "DH Tools" anlegte. Das ist entfallen: BAF steht
+         jetzt in Max' eigenen Dialogen unter Datei -> Importieren
+         und Datei -> Exportieren, eingetragen von den
+         SceneImport- und SceneExport-Klassen im Plugin.
+
+         Nebeneffekt: der Konflikt ab Max 2025 ist damit weg.
+         CreateSubMenu legt dort an und sucht nicht, zwei Pakete
+         koennen sich ein Untermenue also nicht teilen - es
+         entstanden zwei gleichnamige Eintraege nebeneinander.
+
+         Das MacroScript oben bleibt registriert. Unter
+         Customize -> Customize User Interface -> Kategorie
+         "DH Tools" laesst es sich auf eine Toolbar oder einen
+         Shortcut legen, wer das lieber mag.
+         ======================================================== -->
+
+</ApplicationPackage>
