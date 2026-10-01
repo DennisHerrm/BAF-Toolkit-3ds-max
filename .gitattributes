@@ -1,0 +1,14 @@
+# Normalise line endings in the repository
+* text=auto
+
+# cmd.exe mis-handles labels and GOTO in files with LF endings
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.iss text eol=crlf
+
+# Binaries
+*.dlu binary
+*.dll binary
+*.exe binary
+*.baf binary
+*.lab binary
